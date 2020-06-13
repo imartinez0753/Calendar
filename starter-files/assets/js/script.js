@@ -18,20 +18,37 @@ console.log(moment().format("LLLL"));
 var timeEl = document.getElementById("nine");
 var nine = $("#nine").val();
 console.log(nine);
-console.log(document.getElementById("nine").value);
-
+// console.log(document.getElementById("nine").value);
+console.log;
 // console.log(timeEl.innerText);
 
 console.log($("#nine").val());
 console.log($("#nine").attr("data-value"));
+console.log($("data-value"));
 
 var times = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+
 for (var i = 0; i < times.length; i++) {
-	var newRow = $("<div>");
-	newRow.addClass("time-block col-sm-2 text-center pt-2");
-	newRow.attr("data-value", times[i]);
-	newRow.text("times[i]");
-	newRow.append("#row");
+	// var newRow = $("<div>");
+	// newRow.addClass("time-block col-sm-2 text-center pt-2");
+	// newRow.attr("data-value", times[i]);
+	// newRow.text("this is the time " + times[i]);
+	// $("newDiv").append(newRow);
+	var timeEl = $("<div>");
+	timeEl.text(times[i]);
+	timeEl.attr("data-value", times[i]);
+	timeEl.addClass("time-block hour col-sm-2 text-center pt-2 row");
+	var textInput = $("<textarea>");
+	textInput.addClass("h-50 form-control col-sm-8 past row");
+	textInput.attr("id", "exampleFormControlTextarea1");
+	textInput.attr("rows", "1");
+	var saveBtn = $("<button>");
+	saveBtn.text("save");
+	saveBtn.attr("button");
+	saveBtn.addClass("h-50 btn btn-primary col-sm-2 saveBtn text-wrap row");
+
+	$("#newDiv").append(timeEl, textInput, saveBtn);
+	console.log("data-value");
 }
 
 //need to make a div class=container and div=row

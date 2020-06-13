@@ -33,13 +33,13 @@ for (var i = 0; i < times.length; i++) {
 	// newRow.addClass("time-block col-sm-2 text-center pt-2");
 	// newRow.attr("data-value", times[i]);
 	// newRow.text("this is the time " + times[i]);
-	// $("newDiv").append(newRow);
+	// $("#newDiv").append(newRow);
 	var timeEl = $("<div>");
 	timeEl.text(times[i]);
 	timeEl.attr("data-value", times[i]);
 	timeEl.addClass("time-block hour col-sm-2 text-center pt-2 row");
 	var textInput = $("<textarea>");
-	textInput.addClass("h-50 form-control col-sm-8 past row");
+	textInput.addClass("h-50 form-control col-sm-8 row");
 	textInput.attr("id", "exampleFormControlTextarea1");
 	textInput.attr("rows", "1");
 	var saveBtn = $("<button>");
@@ -47,6 +47,13 @@ for (var i = 0; i < times.length; i++) {
 	saveBtn.attr("button");
 	saveBtn.addClass("h-50 btn btn-primary col-sm-2 saveBtn text-wrap row");
 
+	if (times[i] == moment().format("h")) {
+		textInput.addClass("present");
+	} else if (times[i] < moment().format("h")) {
+		textInput.addClass("past");
+	} else {
+		textInput.addClass("future");
+	}
 	$("#newDiv").append(timeEl, textInput, saveBtn);
 	console.log("data-value");
 }

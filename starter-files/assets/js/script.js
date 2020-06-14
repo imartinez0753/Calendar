@@ -8,6 +8,7 @@ var currentTime = moment().get("hour");
 console.log(currentTime);
 console.log("__________________________________");
 console.log(moment().format("h"));
+console.log(moment().format("kk"));
 
 $("#currentDay").html(moment().format("llll"));
 // var now = moment();
@@ -15,19 +16,20 @@ console.log(moment().format("LLLL"));
 // console.log("#nine".val());
 
 // console.log($(this).val);
-var timeEl = document.getElementById("nine");
-var nine = $("#nine").val();
-console.log(nine);
-// console.log(document.getElementById("nine").value);
-console.log;
-// console.log(timeEl.innerText);
+// var timeEl = document.getElementById("nine");
+// var nine = $("#nine").val();
+// console.log(nine);
+// // console.log(document.getElementById("nine").value);
+// console.log;
+// // console.log(timeEl.innerText);
 
-console.log($("#nine").val());
-console.log($("#nine").attr("data-value"));
-console.log($("data-value"));
+// console.log($("#nine").val());
+// console.log($("#nine").attr("data-value"));
+// console.log($("data-value"));
+
+var mathTime = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 var times = [9, 10, 11, 12, 1, 2, 3, 4, 5];
-
 for (var i = 0; i < times.length; i++) {
 	// var newRow = $("<div>");
 	// newRow.addClass("time-block col-sm-2 text-center pt-2");
@@ -36,20 +38,21 @@ for (var i = 0; i < times.length; i++) {
 	// $("#newDiv").append(newRow);
 	var timeEl = $("<div>");
 	timeEl.text(times[i]);
-	timeEl.attr("data-value", times[i]);
+	timeEl.attr("data-value", mathTime[i]);
+
 	timeEl.addClass("time-block hour col-sm-2 text-center pt-2 row");
 	var textInput = $("<textarea>");
-	textInput.addClass("h-50 form-control col-sm-8 row");
+	textInput.addClass("h-50 description mx-auto col-sm-8 row");
 	textInput.attr("id", "exampleFormControlTextarea1");
 	textInput.attr("rows", "1");
 	var saveBtn = $("<button>");
 	saveBtn.text("save");
-	saveBtn.attr("button");
+	saveBtn.attr("button save");
 	saveBtn.addClass("h-50 btn btn-primary col-sm-2 saveBtn text-wrap row");
 
-	if (times[i] == moment().format("h")) {
+	if (mathTime[i] == moment().format("kk")) {
 		textInput.addClass("present");
-	} else if (times[i] < moment().format("h")) {
+	} else if (mathTime[i] < moment().format("kk")) {
 		textInput.addClass("past");
 	} else {
 		textInput.addClass("future");
@@ -57,7 +60,6 @@ for (var i = 0; i < times.length; i++) {
 	$("#newDiv").append(timeEl, textInput, saveBtn);
 	console.log("data-value");
 }
-
 //need to make a div class=container and div=row
 //I need to make a div for time, textarea, and savebtn
 //time dive needs class col-sm-2, text center, pt-2 time-block

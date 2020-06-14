@@ -26,9 +26,8 @@ console.log(moment().format("LLLL"));
 // console.log($("#nine").val());
 // console.log($("#nine").attr("data-value"));
 // console.log($("data-value"));
-
+var userInput = $("#textarea").val;
 var mathTime = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-
 var times = [9, 10, 11, 12, 1, 2, 3, 4, 5];
 for (var i = 0; i < times.length; i++) {
 	// var newRow = $("<div>");
@@ -43,7 +42,7 @@ for (var i = 0; i < times.length; i++) {
 	timeEl.addClass("time-block hour col-sm-2 text-center pt-2 row");
 	var textInput = $("<textarea>");
 	textInput.addClass("h-50 description mx-auto col-sm-8 row");
-	textInput.attr("id", "exampleFormControlTextarea1");
+	textInput.attr("id", "textarea");
 	textInput.attr("rows", "1");
 	var saveBtn = $("<button>");
 	saveBtn.text("save");
@@ -60,6 +59,17 @@ for (var i = 0; i < times.length; i++) {
 	$("#newDiv").append(timeEl, textInput, saveBtn);
 	console.log("data-value");
 }
+
+// $("attr.save").on("click", function () {
+// 	localStorage.set;
+// });
+
+$("button").on("click", function () {
+	console.log("that worked");
+	localStorage.setItem("userInput", userInput);
+});
+
+console.log(localStorage);
 //need to make a div class=container and div=row
 //I need to make a div for time, textarea, and savebtn
 //time dive needs class col-sm-2, text center, pt-2 time-block
